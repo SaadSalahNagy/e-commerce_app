@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:cartzy_app/core/network/network.dart';
 import 'package:cartzy_app/feature/home/data/model/response/category_response_dto.dart';
+import 'package:cartzy_app/feature/home/data/model/response/product_response_dto.dart';
 import 'package:http/http.dart' as http;
 
 class HomeApi {
@@ -23,4 +24,20 @@ class HomeApi {
       return NetworkError("Exception $e");
     }
   }
+
+  Future<NetworkResult<List<ProductResponseDto>>> getProduct() async {
+    //https://api.escuelajs.co/api/v1/products/
+    try{
+      Uri url = Uri.https('api.escuelajs.co', '/api/v1/products/');
+      var response = await http.get(url);
+      var responseBody = response.body;
+      var json = jsonDecode(responseBody)as List;
+      var listOfProduct = json.map((e) => ProductResponseDto.fromJson(e)).toList();
+      return NetworkSuccess(listOfProduct);
+    }
+    catch(e){
+      return NetworkError(e.toString());
+    }
+  }
+
 }

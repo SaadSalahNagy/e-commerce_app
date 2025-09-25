@@ -1,4 +1,5 @@
 
+import 'package:cartzy_app/core/common/screens/product_detail_screen.dart';
 import 'package:cartzy_app/feature/app_section/app_section.dart';
 import 'package:cartzy_app/feature/auth/presentation/view/login_screen.dart';
 import 'package:cartzy_app/feature/auth/presentation/view/register_screen.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         LoginScreen.routeName: (context) => const LoginScreen(),
         RegisterScreen.routeName: (context) => const RegisterScreen(),
         AppSection.routeName: (context) => const AppSection(),
+        ProductDetailScreen.routeName: (context) => const ProductDetailScreen(),
       },
     );
   }
