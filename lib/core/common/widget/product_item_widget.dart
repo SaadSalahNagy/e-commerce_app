@@ -25,8 +25,8 @@ class ProductItemWidget extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: CachedNetworkImage(
-                    imageUrl: (product.images?.isNotEmpty ?? false)
-                        ? product.images!.first
+                    imageUrl: (product.images.isNotEmpty ?? false)
+                        ? product.images.first
                         : imageTest,
                     placeholder: (context, url) => const SizedBox(
                       height: 200,

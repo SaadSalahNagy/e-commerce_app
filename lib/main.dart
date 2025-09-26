@@ -1,4 +1,3 @@
-
 import 'package:cartzy_app/core/common/screens/product_detail_screen.dart';
 import 'package:cartzy_app/feature/app_section/app_section.dart';
 import 'package:cartzy_app/feature/auth/presentation/view/login_screen.dart';
